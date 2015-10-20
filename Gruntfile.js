@@ -435,7 +435,7 @@ module.exports = function (grunt) {
     },
     gitpush: {
      command: function () {
-      return   'git push origin master; git push gitlab master';
+      return   'git push origin master';
      }
     }
    }
