@@ -380,17 +380,17 @@ module.exports = function (grunt) {
    shell: {
     pushbluemix: {
      command: function () {
-      return 'cd /dist/ ;cf push myApptmp --no-manifest --no-start -c "node app.js "' ;
+      return 'cd dist/ ;cf push myApptmp --no-manifest --no-start -c "node app.js "' ;
      }
     },
     startbluemix: {
      command: function () {
-      return 'cd /dist/ ;cf start myApptmp ';
+      return 'cd dist/ ;cf start myApptmp ';
      }
     },
     pushbluemixtest: {
      command: function () {
-      return 'cd ./dist/ ;cf push myApptest1 --no-manifest --no-start -c "node app.js"' ;
+      return 'cd dist/ ;cf push myApptest1 --no-manifest --no-start -c "node app.js"' ;
      }
     },
     startbluemixtest: {
