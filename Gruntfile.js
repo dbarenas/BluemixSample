@@ -380,7 +380,7 @@ module.exports = function (grunt) {
    shell: {
     pushbluemix: {
      command: function () {
-      return 'cd /dist/ ;cf push myApptmp --no-manifest --no-start -c "node app.js"' ;
+      return 'cd /dist/ ;cf push myApptmp --no-manifest --no-start -c "node app.js "' ;
      }
     },
     startbluemix: {
@@ -403,8 +403,8 @@ module.exports = function (grunt) {
       pkg= grunt.file.readJSON("package.json");
 
       var command =
-       'cf unmap-route myApp ng.bluemix.net -n myApp; ' +// unmap route myApp.ng.bluemix.net
-        'cf map-route myApptmp ng.bluemix.net -n myApp; ' +//map route myApp.ng.bluemix.net to myApp tmp
+       'cf unmap-route myApp eu-gb.bluemix.net -n myApp; ' +// unmap route myApp.eu-gb.bluemix.net
+        'cf map-route myApptmp eu-gb.bluemix.net -n myApp; ' +//map route myApp.eu-gb.bluemix.net to myApp tmp
         ' cf rename myApp myApp'+ pkg.version+' ;' +    // rename app myApp into myApplast
        'cf rename myApptmp myApp'; // rename myApptmp to myApp
       console.log(command);
@@ -413,8 +413,8 @@ module.exports = function (grunt) {
     },
     recoverbluemix: {
      command: function () {
-      return   'cf unmap-route myApp ng.bluemix.net -n myApp; ' +// unmap route myApp.ng.bluemix.net
-       'cf map-route myApplast ng.bluemix.net -n myApp; ' ;//map route myApp.ng.bluemix.net to myApptmp
+      return   'cf unmap-route myApp eu-gb.bluemix.net -n myApp; ' +// unmap route myApp.eu-gb.bluemix.net
+       'cf map-route myApplast eu-gb.bluemix.net -n myApp; ' ;//map route myApp.eu-gb.bluemix.net to myApptmp
      }
     },
     gitcommit: {
